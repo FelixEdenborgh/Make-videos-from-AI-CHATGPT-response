@@ -12,7 +12,7 @@ import ffmpeg
 
 
 
-openai.api_key = "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"
+openai.api_key = "Your api key here"
 
 def generate_response(prompt):
     response = openai.Completion.create(
@@ -24,7 +24,7 @@ def generate_response(prompt):
         temperature=0.7,
     )
     return response.choices[0].text
-folder = "C:/Users/FelixEdenborgh/Documents/PythonPrograms/CreaterOfAutomatedYoutubeShorts/files"
+folder = "Folder path to save the response by making it into an image"
 
 
 def makeTxtFile():
@@ -50,7 +50,7 @@ def ConvertToMp3():
     input_folder = folder
 
     # path of folder to save output mp3 files
-    output_folder = "C:/Users/FelixEdenborgh/Documents/PythonPrograms/CreaterOfAutomatedYoutubeShorts/mp3"
+    output_folder = "mp3 folder path for saving"
 
     # get list of text files in input folder
     input_files = os.listdir(input_folder)
@@ -89,7 +89,7 @@ def get_max_line_length(lines, font):
 def CreateAImageWithTheDailyQuoteWrittenOnIt():
     # Define input and output folders
     input_folder = folder
-    output_folder = "C:/Users/FelixEdenborgh/Documents/PythonPrograms/CreaterOfAutomatedYoutubeShorts/img"
+    output_folder = "img folder path for saving"
 
     # Define font and font size
     font = ImageFont.truetype("arial.ttf", 36)
@@ -141,7 +141,7 @@ CreateAImageWithTheDailyQuoteWrittenOnIt()
 
 def CombineImageWithMp3(number):
     # Replace the placeholder with the path to your folder
-    folder_path = "C:/Users/FelixEdenborgh/Documents/PythonPrograms/CreaterOfAutomatedYoutubeShorts/mp3"
+    folder_path = "mp3 folder path for reading"
 
     # Get the list of file names in the folder
     file_names_mp3 = os.listdir(folder_path)
@@ -154,7 +154,7 @@ def CombineImageWithMp3(number):
         print("The folder is empty.")
 
     # Replace the placeholder with the path to your folder
-    folder_path = "C:/Users/FelixEdenborgh/Documents/PythonPrograms/CreaterOfAutomatedYoutubeShorts/img"
+    folder_path = "img folder path for reading"
 
     # Get the list of file names in the folder
     file_names_image = os.listdir(folder_path)
@@ -167,13 +167,14 @@ def CombineImageWithMp3(number):
         print("The folder is empty.")
 
 
-    # Replace the placeholders with the paths to your image and mp3 files
-    image_path = "C:/Users/FelixEdenborgh/Documents/PythonPrograms/CreaterOfAutomatedYoutubeShorts/img/" + first_file_name_image
-    mp3_path = "C:/Users/FelixEdenborgh/Documents/PythonPrograms/CreaterOfAutomatedYoutubeShorts/mp3/" + first_file_name_mp3
+    # Replace the placeholders with the paths to your image and mp3 files + getting the first file in the folder
+    image_path = "image folder path" + first_file_name_image
+    mp3_path = "mp3 folder path" + first_file_name_mp3
 
+    # Name of the movie, start from 0
     string_movie = str(number)
     # Replace the placeholders with the desired output file name and extension
-    output_path = f"C:/Users/FelixEdenborgh/Documents/PythonPrograms/CreaterOfAutomatedYoutubeShorts/Movie/{string_movie}.mp4"
+    output_path = f"save movei to this fodlder/{string_movie}.mp4"
 
     # Load the image file using ffmpeg
     input_image = ffmpeg.input(image_path)
@@ -187,7 +188,7 @@ def CombineImageWithMp3(number):
     # Run the ffmpeg command to create the video
     ffmpeg.run(video)
 
-numbers = 3
+numbers = 0
 
 while(True):
     makeTxtFile()
