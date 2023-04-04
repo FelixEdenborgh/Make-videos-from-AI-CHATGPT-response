@@ -75,9 +75,6 @@ def ConvertToMp3():
         print("Error: {}".format(e))
 
 
-ConvertToMp3()
-
-
 def get_max_line_length(lines, font):
     max_length = 0
     for line in lines:
